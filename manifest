@@ -1,0 +1,11 @@
+# Channel details
+title = StartSlash
+major_version=1
+minor_version=0
+build_version=1
+
+#channel Assets
+mm_icon_focus_hd=pkg:/images/app_icon.png
+
+#Splash Screen
+splash_screen_hd=pkg:/images/splash.jpeg
