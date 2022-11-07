@@ -19,12 +19,13 @@ sub ShowScreen(node as Object)
 end sub
 
 sub CloseScreen(node as Object)
+    
     ' check if node is invalid or stack.peek() is not invalid and is the same node
     if node = invalid OR (m.screenStack.Peek() <> invalid AND m.screenStack.Peek().IsSameNode(node))
         last = m.screenStack.Pop() ' pop last screen 
         last.visible = false ' hide the screen
         m.top.RemoveChild(node) 'remove screen
-
+        
         'bring current node from stack
         prev = m.screenStack.Peek()
         ' Check if its not invalid

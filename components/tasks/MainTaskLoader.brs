@@ -12,7 +12,6 @@ sub GetContent()
     xfer.SetUrl("https://jonathanbduval.com/roku/feeds/roku-developers-feed-v1.json")
     response = xfer.GetToString()
     rootChildren = []
-    rows = {}
     
     jsonResponse = ParseJson(response)
    
@@ -29,7 +28,6 @@ sub GetContent()
                     row.title = item
                     row.children = []
                     for each subItem in value
-                        print subItem
                         itemData = GetItemData(subItem)
                         row.children.Push(itemData)
                     end for
