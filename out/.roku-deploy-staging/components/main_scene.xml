@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene"> 
+<script type="text/brightscript" uri="MainScene.brs" />
+<script type="text/brightscript" uri="logic/ScreenStackLogic.brs" />
+<script type="text/brightscript" uri="logic/GridScreenLogic.brs" />
+<script type="text/brightscript" uri="logic/ContentTaskLogic.brs" />
+	<children>
+      <Label id="loadingIndicator" 
+      	text="Loading..."
+      	width="1280" 
+      	height="620"
+      	horizAlign="center"
+      	vertAlign="center"
+		translation="[10,50]"
+      	/>
+		<!-- Info bar-->
+		<Overhang id="overhand" 
+      	showOptions="true"
+		showClock="true"
+		translation="[0,60]"
+      	/>
+    </children>
+ 
+
+<!-- BrightScript Portion -->
+<script type="text/brightscript" >
+ 
+</script>
+<!-- End of BrightScript Portion -->
+</component>
