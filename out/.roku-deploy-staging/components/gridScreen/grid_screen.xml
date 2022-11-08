@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component name="GridScreen" extends="Group" initialFocus="RowList">
     <script type="text/brightscript" uri="GridScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
     <interface>
         <!-- Specifies the content for the Grid -->
         <field id="content" type="node" alias="RowList.content" />
@@ -10,9 +11,10 @@
     </interface>
 
     <children>
-        <Label 
+        <Label
         id="titleLable"
         width="1020"
+        color="#ffffff"
         translation="[130,170]"
         />
         <Label 

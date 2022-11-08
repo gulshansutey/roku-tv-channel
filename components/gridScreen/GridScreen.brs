@@ -1,7 +1,7 @@
-'entry point for grid screen 
+'entry point for grid screen
 ' every xml need a coresponding behaviour file
 sub Init()
-    ' access rowList defined in its xml file and store it in a variable with 'm' component scope 
+    ' access rowList defined in its xml file and store it in a variable with 'm' component scope
     m.rowList = m.top.FindNode("rowList")
     m.rowList.SetFocus(true)
     m.description = m.top.FindNode("descriptionLabel")
@@ -9,7 +9,7 @@ sub Init()
     m.thumbnail = m.top.FindNode("thumbnail")
     m.title = m.top.FindNode("titleLable")
     'on new row item focused invoke OnItemFoucsed
-    m.rowList.ObserveField("rowItemFocused","OnItemFocused")
+    m.rowList.ObserveField("rowItemFocused", "OnItemFocused")
 
 end sub
 
@@ -20,7 +20,7 @@ sub OnVisibileChange()
 end sub
 
 sub OnItemFocused()
-    focusedIndex=m.rowList.rowItemFocused 'Current focused item
+    focusedIndex = m.rowList.rowItemFocused 'Current focused item
     row = m.rowList.content.GetChild(focusedIndex[0])
     item = row.GetChild(focusedIndex[1])
     m.description.text = item.description
@@ -33,15 +33,3 @@ sub OnItemFocused()
 
 end sub
 
-'converts seconds to mm:ss format
-function GetTime(length as Integer) as String
-    min = (length / 60).ToStr()
-    sec = (length MOD 60)
-    if sec < 10
-        sec = "0"+sec.ToStr()
-    else sec = sec.ToStr()
-    end if
-    return min + ":" + sec
-end function
-
-     

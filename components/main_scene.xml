@@ -5,6 +5,7 @@
 <script type="text/brightscript" uri="logic/GridScreenLogic.brs" />
 <script type="text/brightscript" uri="logic/ContentTaskLogic.brs" />
 <script type="text/brightscript" uri="logic/VideoPlayerLogic.brs" />
+<script type="text/brightscript" uri="logic/DetailScreenLogic.brs" />
 	<children>
       <Label id="loadingIndicator" 
       	text="Loading..."
@@ -18,9 +19,10 @@
 		<Overhang id="overhand" 
       	showOptions="true"
 		showClock="true"
+		 
 		title="Teleflix"
-		logoUri="pkg:/images/sun.png"
-		translation="[0,60]"
+		logoUri="pkg:/images/n-logo.png"
+		translation="[0,0]"
       	/>
     </children>
  
