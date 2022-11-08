@@ -7,12 +7,12 @@ sub ShowGridScreen()
     ShowScreen(m.GridScreen) ' show GridScreen
 end sub
 
-sub OnGridScreenItemSelected(event as Object)
+sub OnGridScreenItemSelected(event as object)
     grid = event.GetRoSGNode()
     ' array of integer
     m.selectedIndex = event.GetData()
     rowContent = grid.content.GetChild(m.selectedIndex[0])
-    itemIndex = m.selectedIndex[1]
-    ShowVideoScreen(rowContent,itemIndex)
+
+    ShowDetailScreen(rowContent, m.selectedIndex[1])
 end sub
 
