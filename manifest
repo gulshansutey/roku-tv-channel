@@ -8,4 +8,4 @@ build_version=1
 mm_icon_focus_hd=pkg:/images/app_icon.png
 
 #Splash Screen
-splash_screen_hd=pkg:/images/splash.jpeg
+splash_screen_hd=pkg:/images/new_img.jpg

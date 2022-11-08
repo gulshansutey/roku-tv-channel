@@ -6,6 +6,7 @@ sub Init()
     m.rowList.SetFocus(true)
     m.description = m.top.FindNode("descriptionLabel")
     m.top.ObserveField("visible", "OnVisibleChange")
+    m.thumbnail = m.top.FindNode("thumbnail")
     m.title = m.top.FindNode("titleLable")
     'on new row item focused invoke OnItemFoucsed
     m.rowList.ObserveField("rowItemFocused","OnItemFocused")
@@ -14,7 +15,7 @@ end sub
 
 sub OnVisibileChange()
     if m.top.visible = true
-        m.rowList.SetFocus(true)
+        m.RowList.SetFocus(true)
     end if
 end sub
 
@@ -23,8 +24,9 @@ sub OnItemFocused()
     row = m.rowList.content.GetChild(focusedIndex[0])
     item = row.GetChild(focusedIndex[1])
     m.description.text = item.description
-    print item.description
     m.title.text = item.title
+    m.thumbnail = item.HDPOSTERURL
+
     if item.length <> invalid
         m.title.text += " | " + GetTime(item.length)
     end if
