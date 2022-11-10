@@ -1,0 +1,7 @@
+out/roku-deploy.zip
+out/.roku-deploy-staging/manifest
+out/.roku-deploy-staging/components/detailScreen/detail_screen.xml
+out/.roku-deploy-staging/components/detailScreen/detail_screen.xsd
+out/.roku-deploy-staging/components/detailScreen/DetailScreen.brs
+out/.roku-deploy-staging/components/gridScreen/GridScreen.brs
+out/.roku-deploy-staging/components/logic/DetailScreenLogic.brs
