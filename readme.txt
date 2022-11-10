@@ -1,4 +1,7 @@
-m is component scope
+"m" is associative array, m has component scope. we define our variables by adding somehting in a object
+In general - "m.top" in Brightscript is used to reference the xml component in which is used.
+For more on scoping - https://developer.roku.com/en-gb/docs/developer-program/core-concepts/data-scoping.md
+
 xml is the scene graph component
 Each xml scene graph file has its coresponding brs file which defines the behaviour
 

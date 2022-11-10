@@ -1,19 +1,19 @@
 'entry point for grid screen
 ' every xml need a coresponding behaviour file
-sub Init()
+function init()
     ' access rowList defined in its xml file and store it in a variable with 'm' component scope
     m.rowList = m.top.FindNode("rowList")
     m.rowList.SetFocus(true)
     m.description = m.top.FindNode("descriptionLabel")
-    m.top.ObserveField("visible", "OnVisibleChange")
+    m.top.ObserveField("visible", "onVisibleChange")
     m.thumbnail = m.top.FindNode("thumbnail")
     m.title = m.top.FindNode("titleLable")
     'on new row item focused invoke OnItemFoucsed
     m.rowList.ObserveField("rowItemFocused", "OnItemFocused")
 
-end sub
+end function
 
-sub OnVisibileChange()
+sub onVisibleChange()
     if m.top.visible = true
         m.RowList.SetFocus(true)
     end if

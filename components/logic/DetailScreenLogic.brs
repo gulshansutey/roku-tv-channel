@@ -1,7 +1,7 @@
 sub ShowDetailScreen(content as object, selectedItem as integer)
     detailScreen = CreateObject("roSGNode", "DetailScreen")
     detailScreen.content = content
-    detailScreen.jumpToitem = selectedItem
+    detailScreen.jumpToItem = selectedItem
     detailScreen.ObserveField("visible", "OnDetailScreenVisibleChange")
     detailScreen.ObserveField("buttonSelected", "OnButtonSelected")
     ShowScreen(detailScreen)
