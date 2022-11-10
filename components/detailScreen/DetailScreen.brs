@@ -17,6 +17,8 @@ function Init()
 end function
 
 sub OnVisibleChange()
+    print "here baby"
+    print m.top.visible
     if m.top.visible = true
         m.buttons.SetFocus(true)
         m.top.itemFocused = m.top.jumpToItem
@@ -34,8 +36,8 @@ end sub
 'invokes when jumpToItem field updated
 sub OnJumpToItem()
     content = m.top.content
-    if content <> invalid and m.top.jumpToitem >= 0 and content.GetChildCount()
-        m.top.itemFocused = m.top.jumpToitem
+    if content <> invalid and m.top.jumpToItem >= 0 and content.GetChildCount() > m.top.jumpToItem
+        m.top.itemFocused = m.top.jumpToItem
     end if
 end sub
 
@@ -50,10 +52,10 @@ function OnKeyEvent(key as string, press as boolean) as boolean
     if press
         currentItem = m.top.itemFocused
         if key = "left"
-            m.jumpToitem = currentItem - 1
+            m.top.jumpToItem = currentItem - 1
             result = true
         else if key = "right"
-            m.jumpToitem = currentItem + 1
+            m.top.jumpToItem = currentItem + 1
             result = true
         end if
     end if
