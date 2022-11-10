@@ -14,8 +14,6 @@ function init()
 end function
 
 sub onVisibleChange()
-    print "Grid visible"
-    print m.top.visible
     if m.top.visible = true
         m.RowList.SetFocus(true)
     end if

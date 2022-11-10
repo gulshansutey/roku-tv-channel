@@ -9,7 +9,6 @@ end sub
 
 
 sub OnButtonSelected(event) '?
-    print "ONbtn"
     deatils = event.GetRoSGNode()
     content = deatils.content
     buttonIndex = event.getData()
@@ -20,7 +19,6 @@ sub OnButtonSelected(event) '?
 end sub
 
 sub OnDetailScreenVisibleChange(event as object)
-    print "OnDetailScreenVisibleChange"
     visible = event.GetData()
     detailScreen = event.GetRoSGNode()
     if visible = false

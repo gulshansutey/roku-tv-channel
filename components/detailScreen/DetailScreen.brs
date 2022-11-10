@@ -17,8 +17,6 @@ function Init()
 end function
 
 sub OnVisibleChange()
-    print "here baby"
-    print m.top.visible
     if m.top.visible = true
         m.buttons.SetFocus(true)
         m.top.itemFocused = m.top.jumpToItem
