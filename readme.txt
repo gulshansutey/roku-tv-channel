@@ -84,3 +84,9 @@ or
 ------<children>------
 
 the <children> element contains the SceneGraph node XML elements.
+
+
+
+Widgets 
+
+LayoutGroup -> LinearLayout 

@@ -4,12 +4,14 @@ function Init()
 
     m.buttons = m.top.FindNode("buttons")
     m.poster = m.top.FindNode("poster")
+    m.poster.contentIsPlaylist = false
+    m.poster.mute = true
     m.description = m.top.FindNode("descriptionLabel")
     m.timeLabel = m.top.FindNode("timeLabel")
     m.titleLabel = m.top.FindNode("titleLabel")
     m.releaseLabel = m.top.FindNode("releaseLabel")
     results = []
-    for each button in ["PLay"]
+    for each button in ["Play"]
         results.Push({ title: button })
     end for
     m.buttons.content = ContentListToSimpleNode(results)
@@ -20,15 +22,28 @@ sub OnVisibleChange()
     if m.top.visible = true
         m.buttons.SetFocus(true)
         m.top.itemFocused = m.top.jumpToItem
+    else HandleVideoScreen(invalid, "stop")
     end if
 end sub
 
 sub SetDetails(content as object)
     m.description.text = content.description
-    m.poster.uri = content.hdPosterUrl
+    'm.poster.uri = content.hdPosterUrl
     m.timeLabel.text = GetTime(content.length)
     m.titleLabel.text = content.title
     m.releaseLabel.text = content.releaseLabel
+    HandleVideoScreen(content, "play")
+end sub
+
+sub HandleVideoScreen(content as object, control as string)
+    videoPlayer = m.poster
+    if(control <> "play" or content = invalid)
+        videoPlayer.control = control
+    else
+        videoPlayer.content = content.Clone(true)
+       
+        videoPlayer.control = control
+    end if
 end sub
 
 'invokes when jumpToItem field updated
@@ -40,6 +55,7 @@ sub OnJumpToItem()
 end sub
 
 sub OnItemFocusChange(event as object)
+    HandleVideoScreen(invalid, "stop")
     focusedItem = event.GetData()
     content = m.top.content.GetChild(focusedItem)
     SetDetails(content)

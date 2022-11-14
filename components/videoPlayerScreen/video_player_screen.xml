@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="VideoPlayerScreen"
+    extends="Group"
+    initialFocus="player">
+
+    <script type="text/brightscript"
+        uri="VideoPlayerScreen.brs" />
+    <interface>
+        <field id="content"
+            type="node" />
+        <field id="buttonSelected"
+            type="node"
+            alias="button.buttonSelected"/>
+        <field id ="currentFocus"
+            type="string"
+            value="player" />
+    </interface>
+    <children>
+
+        <Rectangle width="0"
+            height="0"
+            color="#50c150">
+
+            <Video id="player"
+                width="0"
+                height="0" />
+
+            <Group translation="[0,0]">
+
+                <Button translation="[10,10]"
+                    id="button"
+                    textColor="#e7ff35"
+                    focusedTextColor="#355dff"
+                    
+                    
+                    showFocusFootprint = "true"
+                    
+                    
+                    text = "Score Board" />
+
+            </Group>
+
+            <ParallelAnimation id="playerAnim"
+                duration= "1"
+                easeFunction="inOutExpo">
+
+                <Animation       
+                  >
+<Vector2DFieldInterpolator 
+                    id = "scaleInter"
+                    key= "[0, 1]"
+                    keyValue= "[ [1, 1], [0.7, 0.7] ]"
+                    fieldToInterp="player.scale" />
+
+            </Animation>
+
+            <Animation  >
+                <Vector2DFieldInterpolator
+                        id = "transInter"
+                    key="[0, 1]"
+                    keyValue="[ [0.0, 0.0], [350, 50] ]"
+                    fieldToInterp="player.translation" />
+
+            </Animation>
+
+        </ParallelAnimation>
+
+    </Rectangle>
+
+
+</children>
+
+
+
+</component>

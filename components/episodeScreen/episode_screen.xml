@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="EpisodeScreen"
+    extends="Scene">
+    <script type="text/brightscript"
+        uri="EpisodeScreen.brs" />
+        <script type="text/brightscript"
+		uri="pkg:/components/logic/ScreenStackLogic.brs" />
+    <children>
+
+        <Label id="titleLabel"
+            translation="[0,0]"
+           
+            width="357"
+            backgroundcolor="#fff43f"
+            wrap="false"
+            text="Placeholder"
+            horizAlign="right" />
+
+
+        <Label id="titleLabel"
+            translation="[10,0]"
+           
+            width="357" 
+            wrap="false"
+            text="Placeholder"
+            horizAlign="right" />
+
+
+    </children>
+
+</component>
