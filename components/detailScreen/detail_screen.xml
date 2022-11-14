@@ -34,8 +34,9 @@
                 layoutDirection="vert">
                 <Rectangle width="357"
                     height="201"
-                    color="#fff">
-                    <Poster id="poster"
+                    color="#ba5b5b">
+
+                    <Video id="poster"
                         width="357"
                         loadWidth="357"
                         height="201"
