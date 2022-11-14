@@ -27,12 +27,16 @@
 
             <Group translation="[0,0]">
 
-                <Button translation="[10,10]"
+                <Button translation="[10,650]"
                     id="button"
                     textColor="#e7ff35"
                     focusedTextColor="#355dff"
                     
+                    
+                    
                     showFocusFootprint = "true"
+                    
+                    
                     
                     text = "Score Board" />
 
