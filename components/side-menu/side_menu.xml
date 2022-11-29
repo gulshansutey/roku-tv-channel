@@ -2,5 +2,38 @@
 <component name="SideMenu">
     <script type="text/brightscript"
         uri="SideMenu.brs" />
-    
+    <interface>
+        <field id="id"
+            type="integer" />
+    </interface>
+
+    <children>
+
+        <LayoutGroup translation="[1166,154]"
+            layoutDirection="horiz"
+            horizAlignment="right"
+            itemSpacings="[40]">
+
+            <!-- slider -->
+            <LayoutGroup >
+                <Rectangle width="357"
+                    height="201"
+                    color="#b72020">
+                    
+                </Rectangle>
+            </LayoutGroup>
+
+            <!-- place holder menu -->
+            <TargetLayout>
+                <Rectangle width="357"
+                height="201"
+                color="#20b732">
+                
+            </Rectangle>
+            </TargetLayout>
+
+        </LayoutGroup>
+
+    </children>
+
 </component>
