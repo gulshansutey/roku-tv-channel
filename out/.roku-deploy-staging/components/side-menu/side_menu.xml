@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SideMenu"
+    extends="Group"
+    initialFocus="buttons">
+    <script type="text/brightscript"
+        uri="SideMenu.brs" />
+    <script type="text/brightscript"
+        uri="pkg:/source/Utils.brs" />
+    <interface>
+        <!-- <field id="buttonSelected" type="integer" alias="buttons.itemSelected"/> -->
+
+    </interface>
+
+    <children>
+
+        <Group>
+
+            <Rectangle width="1280"
+                height="720"
+                id="overlay"
+                color="#252525bb">
+            </Rectangle>
+
+            <!-- slider -->
+            <LayoutGroup id="iconMenu">
+                <Rectangle width="120"
+                    height="720"
+                    color="#00000088">
+
+                </Rectangle>
+            </LayoutGroup>
+
+            <!-- place holder menu -->
+            <LayoutGroup id="titleMenu">
+                <Rectangle width="320"
+                    height="720"
+                    id="titleMenuRect"
+                    translation="[-150,0]"
+                    color="#6f6f6f00">
+                    <LayoutGroup  
+                    itemSpacings="[0,200]"
+                    >
+
+                        <LabelList id="accounts"
+                            focusedColor="#FFFFFF"
+                            color="#b4b1b1"
+                            itemSpacings="[0,10]"
+                            drawFocusFeedback="false"
+                            vertFocusAnimationStyle="floatingFocus"
+                            translation="[100,10]"
+                            itemSize="[220,50]" />
+
+                        <LabelList id="buttons"
+                            focusedColor="#FFFFFF"
+                            color="#b4b1b1"
+                            itemSpacings="[10,10]"
+                            drawFocusFeedback="false"
+                            vertFocusAnimationStyle="floatingFocus"
+                            itemSize="[220,50]" />
+                    </LayoutGroup>
+
+                </Rectangle>
+            </LayoutGroup>
+
+            <ParallelAnimation id="sliderAnim"
+                duration="2">
+
+                <Animation>
+
+                    <Vector2DFieldInterpolator id="menuScaleInter"
+                        key="[0,1]"
+                        keyValue= "[[1,1],[1.3,1]]"
+                        fieldToInterp="iconMenu.scale" />
+
+                </Animation>
+
+                <Animation>
+                    <Vector2DFieldInterpolator id="menuTransInter"
+                        key="[0, 1]"
+                        keyValue="[ [-150, 0.0], [155, 0.0] ]"
+                        fieldToInterp="titleMenu.translation" />
+
+                </Animation>
+
+                <Animation>
+                    <ColorFieldInterpolator 
+                        id = "menuColor"
+                        key="[0, 1]"
+                        keyValue="[ #00000000, #00000088 ]"
+                        fieldToInterp="titleMenuRect.color" />
+                </Animation>
+
+                <Animation>
+                    <ColorFieldInterpolator 
+                        id = "overlayDim"
+                        key="[0, 1]"
+                        keyValue="[ #6f6f6f00, #00000087 ]"
+                        fieldToInterp="overlay.color" />
+                </Animation>
+
+            </ParallelAnimation>
+
+        </Group>
+
+    </children>
+
+</component>

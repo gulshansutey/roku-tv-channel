@@ -17,6 +17,8 @@
 		uri="logic/EpisodeScreenLogic.brs" />
 	<script type="text/brightscript"
 		uri="logic/VideoPlayerScreenLogic.brs" />
+	<script type="text/brightscript"
+		uri="logic/CustomCompsLogic.brs" />
 	<children>
 		<Label id="loadingIndicator"
 			text="Loading..."
