@@ -31,13 +31,7 @@
                     id="button"
                     textColor="#e7ff35"
                     focusedTextColor="#355dff"
-                    
-                    
-                    
                     showFocusFootprint = "true"
-                    
-                    
-                    
                     text = "Score Board" />
 
             </Group>

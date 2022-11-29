@@ -5,9 +5,9 @@ sub Init()
     m.loadingIndicator = m.top.FindNode("loadingIndicator")
     m.loadingIndicator.visible = false
     InitScreenStack()
-    ShowGridScreen()
-    RunContentTask()
-
+    'ShowGridScreen()
+    'RunContentTask()
+    ShowSideMenuScreen()
 end sub
 
 ' OnKeyEvent funciton receives remote control key events.
