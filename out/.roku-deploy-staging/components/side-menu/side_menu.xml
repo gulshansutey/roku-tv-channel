@@ -1,55 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="SideMenu"
     extends="Group"
-    initialFocus="buttons">
+    initialFocus="someObect">
     <script type="text/brightscript"
         uri="SideMenu.brs" />
     <script type="text/brightscript"
         uri="pkg:/source/Utils.brs" />
     <interface>
-        <!-- <field id="buttonSelected" type="integer" alias="buttons.itemSelected"/> -->
+        <field id="screenObjectSelected"
+            type="node"
+            alias="someObect.buttonSelected"/>
 
+        <field id="isSideMenuOpen"
+            type="boolean"
+            alias="false"/>
+ 
     </interface>
 
     <children>
 
-        <Group>
+        <Group >
 
+            <Button id="someObect"
+                text="Some Object"
+                width="200"
+                height="50"
+                focusedTextColor="#ffffff"
+                textColor="#9b9595"
+                translation="[50,50]"
+                
+                
+            horizAlign = "center" />
+            <!-- overlay -->
             <Rectangle width="1280"
                 height="720"
                 id="overlay"
-                color="#252525bb">
-            </Rectangle>
-
+                color="#252525bb"/>
             <!-- slider -->
-            <LayoutGroup id="iconMenu">
-                <Rectangle width="120"
+            <Group id="iconMenu">
+
+                <Rectangle width="100"
                     height="720"
                     color="#00000088">
 
-                </Rectangle>
-            </LayoutGroup>
+                    <MarkupList id="buttonsIcons"
+                        translation="[15,205]"
+                        itemSpacing="[10,10]"
+                        itemSize="[40,40]"
+                        
+                        
+                        itemComponentName = "IconItem"
+                        drawFocusFeedback="false"
+                        vertFocusAnimationStyle="floatingFocus" />
 
+                </Rectangle>
+
+            </Group>
             <!-- place holder menu -->
-            <LayoutGroup id="titleMenu">
+            <LayoutGroup id="titleMenu"
+            translation = "[-320, 0]"
+            >
+
+                <!-- Background -->
                 <Rectangle width="320"
                     height="720"
                     id="titleMenuRect"
-                    translation="[-150,0]"
                     color="#6f6f6f00">
-                    <LayoutGroup  
-                    itemSpacings="[0,200]"
-                    >
 
+                    <!-- Listing -->
+
+                    <LayoutGroup translation="[0,30]">
                         <LabelList id="accounts"
                             focusedColor="#FFFFFF"
                             color="#b4b1b1"
                             itemSpacings="[0,10]"
                             drawFocusFeedback="false"
                             vertFocusAnimationStyle="floatingFocus"
-                            translation="[100,10]"
                             itemSize="[220,50]" />
+                    </LayoutGroup>
 
+                    <LayoutGroup translation="[0,180]">
                         <LabelList id="buttons"
                             focusedColor="#FFFFFF"
                             color="#b4b1b1"
@@ -58,26 +88,31 @@
                             vertFocusAnimationStyle="floatingFocus"
                             itemSize="[220,50]" />
                     </LayoutGroup>
-
+                    <LayoutGroup translation="[0,640]">
+                        <Label id="notifications"
+                            text="Notifications"
+                            width="200"
+                            height="50"
+                            
+                            
+                            horizAlign = "center" />
+                    </LayoutGroup>
                 </Rectangle>
             </LayoutGroup>
 
-            <ParallelAnimation id="sliderAnim"
-                duration="2">
 
-                <Animation>
+            <ParallelAnimation id="sliderAnim">
 
-                    <Vector2DFieldInterpolator id="menuScaleInter"
-                        key="[0,1]"
-                        keyValue= "[[1,1],[1.3,1]]"
-                        fieldToInterp="iconMenu.scale" />
+                <!-- <Animation repeat="true">
 
-                </Animation>
+                    <Vector2DFieldInterpolator id="menuScaleInter" key="[0,1]" keyValue= "[[1,1],[1.2,1]]" fieldToInterp="iconMenu.scale" />
 
-                <Animation>
-                    <Vector2DFieldInterpolator id="menuTransInter"
+                </Animation> -->
+
+                <Animation  >
+                    <Vector2DFieldInterpolator id="navLabelsInterpolator"
                         key="[0, 1]"
-                        keyValue="[ [-150, 0.0], [155, 0.0] ]"
+                        keyValue="[ [-150, 0.0], [100, 0.0] ]"
                         fieldToInterp="titleMenu.translation" />
 
                 </Animation>
