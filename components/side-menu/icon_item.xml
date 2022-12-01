@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="IconItem" extends="Group">
+    <interface> 
+        <field id = "itemContent" type = "node" onChange = "showcontent" />
+        <field id = "focusPercent" type = "float" onChange = "showfocus" />
+      </interface>
+    <script type = "text/brightscript" >
+
+        <![CDATA[
+        sub init()
+          m.top.id = "markuplistitem"
+          m.itemicon = m.top.findNode("itemIcon") 
+          m.itemcursor = m.top.findNode("itemcursor") 
+        end sub
+        sub showcontent()
+          itemcontent = m.top.itemContent
+          m.itemicon.uri = itemcontent.url 
+          m.itemicon.blendColor = "#ffffff"
+        end sub
+        sub showfocus()
+          m.itemcursor.opacity = m.top.focusPercent 
+        end sub
+        ]]>
+    
+      </script>
+    <children >
+
+        <Poster 
+          id = "itemIcon" 
+          horizAlign="center"
+		  vertAlign="center" 
+          width = "20"
+          height = "20"
+          loadWidth = "20" 
+          translation = "[ 20, 0 ]"
+          loadDisplayMode="limitSize"
+          loadHeight = "20" />
+      
+        <Rectangle 
+          id = "itemcursor" 
+          translation = "[ 20, 25 ]" 
+          width = "30" 
+          height = "2" 
+          color = "#d85d5d" 
+          opacity = "0.0" />
+    
+      </children>
+</component>
